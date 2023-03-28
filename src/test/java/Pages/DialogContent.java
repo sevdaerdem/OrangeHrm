@@ -7,11 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class DialogContent extends Parent{
+public class DialogContent extends Parent {
 
     public DialogContent() {
-        PageFactory.initElements(GWD.getDriver(),this);
+        PageFactory.initElements(GWD.getDriver(), this);
     }
+
     @FindBy(css = "[name='username']")
     public WebElement idBox;
     @FindBy(css = "[name='password']")
@@ -43,15 +44,22 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "/html/body/div/div[1]/div[1]/header/div[1]/div[2]/ul/li/span/p")
     public WebElement eemployeName;
 
-    @FindBy(xpath = "//div[@role='listbox']//")
-    public WebElement cikan;
-    //div[@role='listbox']/*
-    public WebElement getWebElement(String strButton){
+    @FindBy(xpath = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[3]/button[2]")
+    public WebElement saveButton;
 
-        switch (strButton)
-        {
-            case "idBox" : return idBox;
-            case "addBtn": return addBtn;
+    public WebElement getWebElement(String strButton) {
+
+        switch (strButton) {
+            case "idBox":
+                return idBox;
+            case "addBtn":
+                return addBtn;
+            case "userName":
+                return userName;
+            case "password1":
+                return password1;
+            case "password2":
+                return password2;
         }
 
         return null;

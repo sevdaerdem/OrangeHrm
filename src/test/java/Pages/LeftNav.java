@@ -22,7 +22,7 @@ public class LeftNav extends Parent{
 
         switch (strButton)
         {
-            case "admin":return admin;
+            case "admin": return admin;
             case "2":
             case "3":
             case "4":

@@ -29,14 +29,12 @@ public class _03_CreateUserSteps {
         dc.clickFunction(dc.listbox.get(2));
         dc.clickFunction(dc.statusSelect);
         dc.clickFunction(dc.listbox.get(1));
-        dc.sendKeysFunction(dc.userName,"randomUser2");
-        dc.sendKeysFunction(dc.password1,"Romdom.123");
-        dc.sendKeysFunction(dc.password2,"Romdom.123");
         String admin=dc.eemployeName.getText();
         dc.sendKeysFunction(dc.employee,admin);
-        wait.until(ExpectedConditions.stalenessOf(dc.cikan));
-        dc.clickFunction(dc.cikan);
-
+        wait.until(ExpectedConditions.stalenessOf(dc.listbox.get(0)));
+        wait.until(ExpectedConditions.textToBePresentInElement(dc.listbox.get(0), admin));
+        dc.clickFunction(dc.listbox.get(0));
+        dc.clickFunction(dc.saveButton);
 
     }
 }
