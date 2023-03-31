@@ -30,9 +30,11 @@ public class _03_CreateUserSteps {
         dc.clickFunction(dc.statusSelect);
         dc.clickFunction(dc.listbox.get(1));
         String admin=dc.eemployeName.getText();
+        String bosluk= String.valueOf(admin.indexOf(" "));
+        String soyad=admin.substring(Integer.parseInt(bosluk));
         dc.sendKeysFunction(dc.employee,admin);
         wait.until(ExpectedConditions.stalenessOf(dc.listbox.get(0)));
-        wait.until(ExpectedConditions.textToBePresentInElement(dc.listbox.get(0), admin));
+        wait.until(ExpectedConditions.textToBePresentInElement(dc.listbox.get(0), soyad));
         dc.clickFunction(dc.listbox.get(0));
         dc.clickFunction(dc.saveButton);
 

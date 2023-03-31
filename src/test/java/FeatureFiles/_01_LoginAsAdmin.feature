@@ -12,9 +12,9 @@ Feature: Login as Admin
     And Click on the element in Dialog
       | addBtn |
     And User sending the keys in Dialog Content
-      |userName|randomUser55|
-      |password1|Romdom.123|
-      |password2|Romdom.123|
+      | userName  | randomUser60 |
+      | password1 | Romdom.123   |
+      | password2 | Romdom.123   |
 
 
     And   fill up the form by entering the required info to the all input boxes I click on Save button
