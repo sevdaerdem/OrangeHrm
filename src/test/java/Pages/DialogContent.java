@@ -47,6 +47,9 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[3]/button[2]")
     public WebElement saveButton;
 
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[4]/div/span")
+    public WebElement Negatifverify;
+
     public WebElement getWebElement(String strButton) {
 
         switch (strButton) {
