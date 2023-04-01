@@ -39,4 +39,23 @@ public class _03_CreateUserSteps {
         dc.clickFunction(dc.saveButton);
 
     }
+
+    @And("Send to user name five  characters")
+    public void sendToUserNameFiveCharacters() { dc.clickFunction(dc.userRoleSelect);
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//div[@role='listbox']/*"),2));
+        dc.clickFunction(dc.listbox.get(2));
+        dc.clickFunction(dc.statusSelect);
+        dc.clickFunction(dc.listbox.get(1));
+        String admin=dc.eemployeName.getText();
+        String bosluk= String.valueOf(admin.indexOf(" "));
+        String soyad=admin.substring(Integer.parseInt(bosluk));
+        dc.sendKeysFunction(dc.employee,admin);
+        wait.until(ExpectedConditions.stalenessOf(dc.listbox.get(0)));
+        wait.until(ExpectedConditions.textToBePresentInElement(dc.listbox.get(0), soyad));
+        dc.clickFunction(dc.listbox.get(0));
+        dc.sendKeysFunction(dc.userName,"hulk");
+
+
+
+    }
 }
